@@ -348,6 +348,34 @@ li.address01 {
   float: right;
   overflow: hidden;
 }
+#contents_04 {
+  background: url("/cndh-clone/image/common/bg_bidding.jpg") no-repeat 0 1px;
+  height: 183px;
+  width: 785px;
+  float: right;
+  overflow: hidden;
+}
+#contents_05 {
+  background: url("/cndh-clone/image/common/bg_infocenter.jpg") no-repeat 0 1px;
+  height: 183px;
+  width: 785px;
+  float: right;
+  overflow: hidden;
+}
+#contents_09 {
+  background: url("/cndh-clone/image/common/bg_company.jpg") no-repeat 0 1px;
+  height: 183px;
+  width: 785px;
+  float: right;
+  overflow: hidden;
+}
+.left_menu_area.left_menu_area_cus {
+  height: auto;
+}
+.left_menu_area.left_menu_area_cus .left_menu_list {
+  top: 0;
+  margin-top: 30px;
+}
 .company_title {
   position: relative;
   top: 40px;
@@ -1321,7 +1349,10 @@ input, select{/*border:1px solid #ccc;*/ vertical-align:middle;}
   }
   #contents_01,
   #contents_02,
-  #contents_03 {
+  #contents_03,
+  #contents_04,
+  #contents_05,
+  #contents_09 {
     float: none;
     width: 100%;
     height: auto;
