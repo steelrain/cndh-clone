@@ -362,6 +362,13 @@ li.address01 {
   float: right;
   overflow: hidden;
 }
+#contents_06 {
+  background: url("/cndh-clone/image/common/bg_customer_new.jpg") no-repeat 0 1px;
+  height: 183px;
+  width: 785px;
+  float: right;
+  overflow: hidden;
+}
 #contents_09 {
   background: url("/cndh-clone/image/common/bg_company.jpg") no-repeat 0 1px;
   height: 183px;
@@ -450,7 +457,69 @@ li.address01 {
 .left_menu_depth li.last {
   background: url("/cndh-clone/image/common/btn_left_menu_sub03_on.gif") no-repeat 0 0;
 }
+.left_menu_area.left_menu_area_cus .left_menu_d2 a,
+.left_menu_area.left_menu_area_cus .left_menu_d3 a {
+  background: #f8f8f8;
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
+  box-sizing: border-box;
+  text-indent: 0;
+  padding: 0 10px 0 40px;
+  height: auto;
+}
+.left_menu_area.left_menu_area_cus .left_menu_d2 a:hover,
+.left_menu_area.left_menu_area_cus .left_menu_d3 a:hover {
+  background: #b9cfd9;
+}
+#contents_06 ~ #container_section dl {
+  margin: 0;
+}
+#contents_06 ~ #container_section .cust_list dl,
+#contents_06 ~ #container_section .cust_list01 dl {
+  margin-left: 10px;
+}
+#contents_06 ~ #container_section dl.mt5 {
+  margin-top: 5px;
+  margin-left: 0;
+}
+#contents_06 ~ #container_section dd {
+  margin: 0;
+}
+#contents_06 ~ #container_section .cust_list01 dd {
+  margin-left: 15px;
+}
+#contents_06 ~ #container_section .fr-view strong {
+  font-weight: 700;
+}
+#contents_06 ~ #container_section .fr-view table {
+  border: 0;
+  border-collapse: collapse;
+  empty-cells: show;
+  max-width: 100%;
+}
+#contents_06 ~ #container_section .fr-view table td,
+#contents_06 ~ #container_section .fr-view table th {
+  border: 1px solid #ddd;
+  min-width: 5px;
+}
+#contents_06 ~ #container_section .fr-view table.fr-dashed-borders td,
+#contents_06 ~ #container_section .fr-view table.fr-dashed-borders th {
+  border-style: dashed;
+}
+#contents_06 ~ #container_section .fr-view table td:empty,
+#contents_06 ~ #container_section .fr-view table th:empty {
+  height: 20px;
+}
+.mt5 { margin-top: 5px; }
+.mt10 { margin-top: 10px; }
+.mt15 { margin-top: 15px; }
+.mt20 { margin-top: 20px; }
 .mt40 { margin-top: 40px; }
+.ml50 { margin-left: 50px; }
+.mr5 { margin-right: 5px; }
+.pl15 { padding-left: 15px; }
+.pl20 { padding-left: 20px; }
+.mb20 { margin-bottom: 20px; }
 .mt60 { margin-top: 60px; }
 a:link,
 a:visited,
