@@ -369,6 +369,13 @@ li.address01 {
   float: right;
   overflow: hidden;
 }
+#contents_07 {
+  background: url("/cndh-clone/image/common/bg_sitemap.jpg") no-repeat 0 1px;
+  height: 183px;
+  width: 785px;
+  float: right;
+  overflow: hidden;
+}
 #contents_09 {
   background: url("/cndh-clone/image/common/bg_company.jpg") no-repeat 0 1px;
   height: 183px;
@@ -1421,6 +1428,8 @@ input, select{/*border:1px solid #ccc;*/ vertical-align:middle;}
   #contents_03,
   #contents_04,
   #contents_05,
+  #contents_06,
+  #contents_07,
   #contents_09 {
     float: none;
     width: 100%;
