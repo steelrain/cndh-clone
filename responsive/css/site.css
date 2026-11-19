@@ -177,7 +177,7 @@ body.home #container { width: 100%; margin: 0; }
   min-height: 320px;
   overflow: hidden;
   border-radius: 18px;
-  background: #f7fcf8 url("/cndh-clone/responsive/image/main/img_visual_evening.png") 100% 62% / 280% auto no-repeat;
+  background: #f7fcf8 url("/cndh-clone/responsive/image/main/img_visual_evening.png") 100% 62% / contain no-repeat;
 }
 .home-block { padding: 36px 0; }
 .banner-grid, .board-grid, .shortcut-grid { display: grid; gap: 20px; }
@@ -384,7 +384,7 @@ input[type="text"], select, textarea {
   cursor: pointer;
 }
 .button_area, .button_area_01, .button_write { padding-top: 18px; text-align: right; }
-.table-scroll { max-width: 100%; overflow-x: auto; }
+.table-scroll { width: 100%; max-width: 100%; overflow-x: auto; }
 
 .company_policy_title, .company_policy_line01 {
   margin: 0 0 12px;
@@ -712,14 +712,15 @@ div.tabs_wrap { margin-top: 20px; }
   .header_menu { grid-column: 1 / -1; grid-row: 2; justify-content: flex-start; }
   .home-inner { width: calc(100% - 32px); }
   .mvisual-layout { grid-template-columns: 1fr; min-height: 0; padding: 28px 0 0; }
-  .mvisual-art { min-height: 190px; background-position: 100% 70%; background-size: 280% auto; }
+  .mvisual-art { min-height: 190px; background-position: 100% 70%; background-size: contain; }
   .mvisual h2 { font-size: 32px; }
   .home-block { padding: 24px 0; }
   .banner-card { min-height: 0; }
   .shortcut-grid { grid-template-columns: 1fr 1fr; }
   .ceo_headline { font-size: 24px; }
   #contents_01, #contents_02, #contents_03, #contents_04, #contents_05, #contents_06, #contents_09 { padding: 20px 16px; }
-  .table-scroll > table { min-width: 640px; }
+  .table-scroll > table.business_board_01,
+  .table-scroll > table.business_board_02 { min-width: 640px; }
   .cust_list li, .cust_list01 li { padding: 112px 0 16px; }
   .benefits > li, .ideal_talent > li { width: 100%; }
   .history_section_01 { background-image: none; }
