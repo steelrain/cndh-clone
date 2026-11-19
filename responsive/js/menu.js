@@ -63,6 +63,8 @@
 
   var revealNodes = document.querySelectorAll(".reveal");
   if (revealNodes.length) {
+    // Opt in only after script runs so no-JS keeps content visible.
+    document.documentElement.classList.add("js-reveal");
     if ("IntersectionObserver" in window) {
       var revealObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {

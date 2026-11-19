@@ -528,12 +528,15 @@ body.home #header_wrap {
     url("/cndh-clone/responsive/image/common/bg_pr.jpg") center / cover no-repeat;
 }
 
-.reveal {
+/* Visible by default; hide only after menu.js opts into reveal motion. */
+html.js-reveal .reveal:not(.is-in) {
   opacity: 0;
   transform: translateY(28px);
+}
+html.js-reveal .reveal {
   transition: opacity .7s ease, transform .7s ease;
 }
-.reveal.is-in {
+html.js-reveal .reveal.is-in {
   opacity: 1;
   transform: translateY(0);
 }
@@ -541,8 +544,13 @@ body.home #header_wrap {
   .mvisual-photo,
   .mvisual-leaf,
   .mvisual-copy,
-  .mvisual-scroll,
-  .reveal { animation: none !important; transition: none !important; opacity: 1; transform: none; }
+  .mvisual-scroll { animation: none !important; }
+  html.js-reveal .reveal {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 /* Subpages */
