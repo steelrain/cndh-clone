@@ -191,9 +191,8 @@ body.home #header_wrap {
   align-items: center;
   overflow: hidden;
   color: var(--navy);
-  background:
-    radial-gradient(900px 420px at 18% 20%, rgba(215, 238, 245, 0.95), transparent 58%),
-    linear-gradient(115deg, #eef8fb 0%, #d5ebf2 38%, #b7d8e4 68%, #8ebccc 100%);
+  /* First-image rec: origin evening visual as full-bleed hero (replaces hero_warmth + leaf collage) */
+  background: #0d2f42;
 }
 .mvisual-media {
   position: absolute;
@@ -203,34 +202,36 @@ body.home #header_wrap {
 }
 .mvisual-photo {
   position: absolute;
-  right: -2%;
-  top: 0;
-  width: min(68vw, 980px);
+  inset: 0;
+  width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 52% 36%;
-  filter: saturate(1.06) contrast(1.03);
+  object-position: 72% 42%;
+  filter: saturate(1.04) contrast(1.02);
   animation: heroDrift 18s ease-in-out infinite alternate;
-  transform-origin: 60% 40%;
+  transform-origin: 70% 40%;
 }
-.mvisual-leaf {
-  position: absolute;
-  right: 1%;
-  bottom: -3%;
-  width: min(30vw, 380px);
-  opacity: 0.88;
-  filter: drop-shadow(0 18px 30px rgba(13, 47, 66, 0.18));
-  animation: leafFloat 10s ease-in-out infinite alternate;
-}
+.mvisual-leaf { display: none; }
 .mvisual-veil {
   position: absolute;
   inset: 0;
   z-index: 1;
+  /* Left ~1/3 copy space over evening art (covers baked-in origin text) */
   background:
-    linear-gradient(105deg, rgba(232, 245, 249, 0.97) 0%, rgba(232, 245, 249, 0.88) 28%, rgba(232, 245, 249, 0.28) 52%, rgba(232, 245, 249, 0.05) 68%, transparent 78%),
-    linear-gradient(180deg, rgba(15, 55, 72, 0.1) 0%, transparent 24%, transparent 70%, rgba(15, 55, 72, 0.16) 100%);
+    linear-gradient(105deg, rgba(8, 32, 44, 0.88) 0%, rgba(8, 32, 44, 0.72) 22%, rgba(8, 32, 44, 0.28) 42%, rgba(8, 32, 44, 0.08) 58%, transparent 72%),
+    linear-gradient(180deg, rgba(8, 32, 44, 0.28) 0%, transparent 28%, transparent 72%, rgba(8, 32, 44, 0.4) 100%);
   pointer-events: none;
 }
+body[data-page="home"] .mvisual-brand,
+body[data-page="home"] .mvisual h2,
+body[data-page="home"] .mvisual-lead { color: #f4fbfd; text-shadow: 0 1px 18px rgba(0,0,0,.28); }
+body[data-page="home"] .mvisual-lead { color: rgba(236, 248, 251, 0.92); }
+body[data-page="home"] .mvisual-cta .cta-ghost {
+  background: rgba(255,255,255,.14);
+  border-color: rgba(255,255,255,.45);
+  color: #fff;
+}
+body[data-page="home"] .mvisual-scroll { color: rgba(244,251,253,.9); }
 .mvisual-layout {
   position: relative;
   z-index: 2;
@@ -626,6 +627,146 @@ body.sub #container {
   inset: 0;
   background: linear-gradient(90deg, rgba(255,255,255,.94), rgba(255,255,255,.74));
 }
+
+/* ---- First-image recommendations (slot 1 only) — page section headers ---- */
+/* Company */
+body[data-page="company-001"] #contents_01 {
+  background-image: url("/cndh-clone/responsive/image/company/bg_ceo.jpg");
+  background-position: 70% 20%;
+}
+body[data-page="company-002"] #contents_01 {
+  background-image: url("/cndh-clone/responsive/image/company/bg_history_img.jpg");
+  background-position: center 8%;
+}
+body[data-page="company-03-001"] #contents_01,
+body[data-page="company-03-002"] #contents_01 {
+  background-image: url("/cndh-clone/responsive/image/company/bg_company_group_headline.jpg");
+  background-position: center 30%;
+}
+body[data-page="company-004"] #contents_01 {
+  background-image: url("/cndh-clone/responsive/image/company/bg_history_img.jpg");
+  background-position: center top;
+}
+body[data-page="company-005"] #contents_01 {
+  background-image: url("/cndh-clone/responsive/image/company/bg_history_img.jpg");
+  background-position: 40% 12%;
+}
+body[data-page="company-006"] #contents_01 {
+  background-image: url("/cndh-clone/responsive/image/company/img_company_map.jpg");
+  background-position: center 40%;
+}
+body[data-page="company-007"] #contents_01 {
+  background-image: url("/cndh-clone/responsive/image/company/step1.jpg");
+  background-position: center 35%;
+}
+/* Business */
+body[data-page="business-005"] #contents_02,
+body[data-page="business-004"] #contents_02 {
+  background-image: url("/cndh-clone/responsive/image/business/img_business_map_2026.jpg");
+  background-position: 50% 18%;
+}
+body[data-page="business-001"] #contents_02 {
+  background-image: url("/cndh-clone/responsive/image/business/img_business_img01.jpg");
+  background-position: center 30%;
+}
+body[data-page="business-002"] #contents_02 {
+  background-image: url("/cndh-clone/responsive/image/business/img_business_img02.jpg");
+  background-position: center 30%;
+}
+body[data-page="business-003"] #contents_02 {
+  background-image: url("/cndh-clone/responsive/image/customer/cus_pic01.png");
+  background-position: 20% 40%;
+  background-color: #e8f4f7;
+}
+/* PR */
+body[data-page="pr-001"] #contents_03 {
+  background-image: url("/cndh-clone/responsive/image/pr/img_concept_02.jpg");
+  background-position: center 40%;
+}
+body[data-page="pr-news-list"] #contents_03,
+body[data-page="pr-news-view"] #contents_03 {
+  background-image: url("/cndh-clone/responsive/image/company/bg_history_img.jpg");
+  background-position: center 10%;
+}
+/* Bidding */
+body[data-page="bidding-product-list"] #contents_04,
+body[data-page="bidding-product-view"] #contents_04,
+body[data-page="bidding-faq"] #contents_04 {
+  background-image: url("/cndh-clone/responsive/image/company/bg_history_img.jpg");
+  background-position: 55% 14%;
+}
+body[data-page="bidding-build-list"] #contents_04,
+body[data-page="bidding-build-view"] #contents_04 {
+  background-image: url("/cndh-clone/responsive/image/company/bg_history_img.jpg");
+  background-position: 35% 8%;
+}
+/* Infocenter — document/facility substitutes (no binder/office shoot assets) */
+body[data-page="info-rule-list"] #contents_05,
+body[data-page="info-rule-view"] #contents_05,
+body[data-page="info-form"] #contents_05 {
+  background-image: url("/cndh-clone/responsive/image/customer/notice_voucher_2026.jpg");
+  background-position: center 20%;
+}
+body[data-page="info-standard-list"] #contents_05,
+body[data-page="info-data"] #contents_05,
+body[data-page="info-recruit"] #contents_05 {
+  background-image: url("/cndh-clone/responsive/image/company/bg_history_img.jpg");
+  background-position: center 10%;
+}
+body[data-page="info-standard-view"] #contents_05 {
+  background-image: url("/cndh-clone/responsive/image/customer/img_cus0201_re.jpg");
+  background-position: center 30%;
+}
+/* Customer */
+body[data-page="cust-notice-list"] #contents_06,
+body[data-page="cust-notice-view"] #contents_06,
+body[data-page="cust-rate"] #contents_06 {
+  background-image: url("/cndh-clone/responsive/image/customer/notice_voucher_2026.jpg");
+  background-position: center 18%;
+}
+body[data-page="cust-mgmt"] #contents_06,
+body[data-page="cust-faq-view"] #contents_06 {
+  background-image: url("/cndh-clone/responsive/image/customer/img_cus0201_re.jpg");
+  background-position: center 35%;
+}
+body[data-page="cust-equip-heat"] #contents_06,
+body[data-page="cust-mend-list"] #contents_06,
+body[data-page="cust-mend-view"] #contents_06,
+body[data-page="cust-make-list"] #contents_06,
+body[data-page="cust-make-view"] #contents_06 {
+  background-image: url("/cndh-clone/responsive/image/company/bg_history_img.jpg");
+  background-position: center 12%;
+}
+body[data-page="cust-equip-cool"] #contents_06,
+body[data-page="cust-eff-cool"] #contents_06 {
+  background-image: url("/cndh-clone/responsive/image/business/img_business_img02.jpg");
+  background-position: center 30%;
+}
+body[data-page="cust-equip-home"] #contents_06,
+body[data-page="cust-eff-heat"] #contents_06,
+body[data-page="cust-faq-list"] #contents_06,
+body[data-page="cust-fault-off"] #contents_06,
+body[data-page="cust-fault-partial"] #contents_06 {
+  background-image: url("/cndh-clone/responsive/image/customer/cus_pic01.png");
+  background-position: 15% 45%;
+  background-color: #eef6f8;
+}
+body[data-page="cust-fee"] #contents_06 {
+  background-image: url("/cndh-clone/responsive/image/business/img_business_map_2026.jpg");
+  background-position: 50% 22%;
+}
+/* Recruitment */
+body[data-page="recruit-001"] #contents_09,
+body[data-page="recruit-002"] #contents_09,
+body[data-page="recruit-003"] #contents_09 {
+  background-image: url("/cndh-clone/responsive/image/company/bg_history_img.jpg");
+  background-position: center 18%;
+}
+/* Sitemap */
+body[data-page="sitemap"] #contents_07 {
+  background-image: url("/cndh-clone/responsive/image/pr/img_concept_02.jpg");
+  background-position: center 45%;
+}
 .ceo_headline, .ceo_headline_txt { position: relative; z-index: 1; top: auto; left: auto; max-width: none; }
 .ceo_headline { margin: 0; color: var(--navy); font-size: 30px; font-weight: 700; letter-spacing: -0.03em; }
 .ceo_headline_txt { margin: 8px 0 0; color: #3e5660; font-size: 15px; font-weight: 700; }
@@ -957,7 +1098,6 @@ div.tabs_wrap { margin-top: 20px; }
   .home-inner, .mvisual-layout { width: min(1040px, calc(100% - 48px)); }
   .board-head h2, .shortcut-title { font-size: 1.35rem; }
   #gnb > li > a { padding: 14px 12px; font-size: 15px; }
-  .mvisual-photo { width: min(56vw, 720px); }
 }
 
 @media (max-width: 1439px) {
@@ -1017,8 +1157,7 @@ div.tabs_wrap { margin-top: 20px; }
   .banner-panel { min-height: 240px; }
   .board-grid { grid-template-columns: 1fr; gap: 28px; }
   .mvisual { min-height: min(78vh, 720px); }
-  .mvisual-photo { width: min(70vw, 560px); right: -10%; opacity: 0.95; }
-  .mvisual-leaf { width: min(42vw, 280px); opacity: 0.8; }
+  .mvisual-photo { inset: 0; width: 100%; height: 100%; object-position: 68% 40%; opacity: 1; }
 }
 
 @media (max-width: 767px) {
@@ -1036,24 +1175,16 @@ div.tabs_wrap { margin-top: 20px; }
   .mvisual-layout { padding: 28px 0 84px; }
   .mvisual-media { position: absolute; inset: 0; }
   .mvisual-photo {
-    right: -18%;
-    top: 0;
-    width: 118%;
-    height: 62%;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    object-position: 58% 28%;
-  }
-  .mvisual-leaf {
-    right: -2%;
-    bottom: 28%;
-    width: 52%;
-    max-width: 220px;
-    opacity: 0.78;
+    object-position: 70% 38%;
   }
   .mvisual-veil {
     background:
-      linear-gradient(180deg, rgba(236, 248, 251, 0.2) 0%, rgba(236, 248, 251, 0.42) 36%, rgba(236, 248, 251, 0.94) 68%, rgba(236, 248, 251, 0.98) 100%),
-      linear-gradient(90deg, rgba(236, 248, 251, 0.55), transparent 70%);
+      linear-gradient(180deg, rgba(8, 32, 44, 0.35) 0%, rgba(8, 32, 44, 0.2) 30%, rgba(8, 32, 44, 0.78) 68%, rgba(8, 32, 44, 0.92) 100%),
+      linear-gradient(90deg, rgba(8, 32, 44, 0.7), transparent 72%);
   }
   .mvisual-cta a { flex: 1 1 auto; }
   .home-boards { padding: 48px 0 36px; }
