@@ -723,7 +723,7 @@ body[data-page="business-003"] #contents_02 {
 }
 /* PR */
 body[data-page="pr-001"] #contents_03 {
-  background-image: url("/cndh-clone/responsive/image/pr/img_concept_02.jpg");
+  background-image: url("/cndh-clone/responsive/image/pr/img_concept_02.svg");
   background-position: center 40%;
 }
 body[data-page="pr-news-list"] #contents_03,
@@ -807,7 +807,7 @@ body[data-page="recruit-003"] #contents_09 {
 }
 /* Sitemap */
 body[data-page="sitemap"] #contents_07 {
-  background-image: url("/cndh-clone/responsive/image/pr/img_concept_02.jpg");
+  background-image: url("/cndh-clone/responsive/image/pr/img_concept_02.svg");
   background-position: center 45%;
 }
 .ceo_headline, .ceo_headline_txt { position: relative; z-index: 1; top: auto; left: auto; max-width: none; }
@@ -927,9 +927,9 @@ input[type="text"], select, textarea {
 }
 .company_organization, .company_organization.new {
   aspect-ratio: 616 / 385;
-  background-image: url("/cndh-clone/responsive/image/company/img_organization.gif");
+  background-image: url("/cndh-clone/responsive/image/company/img_organization.svg");
 }
-.company_organization.new { background-image: url("/cndh-clone/responsive/image/company/img_organization_n.gif"); }
+.company_organization.new { background-image: url("/cndh-clone/responsive/image/company/img_organization_n.svg"); }
 .group_tab_title, div.tabs_wrap ul, .faq_tab_title {
   display: flex;
   flex-wrap: wrap;
@@ -993,19 +993,19 @@ div.tabs_wrap { margin-top: 20px; }
   content: "";
   background-repeat: no-repeat;
 }
-.cus_ico01::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico01.png"); }
-.cus_ico02::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico02.png"); }
-.cus_ico03::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico03.png"); }
-.cus_ico04::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico04.png"); }
-.cus_ico05::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico05.png"); }
-.cus_ico06::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico06.png"); }
-.cus_ico07::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico07.png"); }
-.cus_ico09::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico09.png"); }
-.cus_ico10::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico10.png"); }
-.cus_ico11::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico11.png"); }
-.cus_ico12::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico12.png"); }
-.cus_ico13::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico13.png"); }
-.cus_ico14::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico14.png"); }
+.cus_ico01::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico01.svg"); }
+.cus_ico02::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico02.svg"); }
+.cus_ico03::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico03.svg"); }
+.cus_ico04::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico04.svg"); }
+.cus_ico05::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico05.svg"); }
+.cus_ico06::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico06.svg"); }
+.cus_ico07::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico07.svg"); }
+.cus_ico09::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico09.svg"); }
+.cus_ico10::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico10.svg"); }
+.cus_ico11::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico11.svg"); }
+.cus_ico12::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico12.svg"); }
+.cus_ico13::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico13.svg"); }
+.cus_ico14::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico14.svg"); }
 .cus_p_img01::before { background-image: url("/cndh-clone/responsive/image/customer/cus_pic01.png"); }
 .cus_p_img02::before { background-image: url("/cndh-clone/responsive/image/customer/cus_pic02.png"); }
 .cus_p_img03::before { background-image: url("/cndh-clone/responsive/image/customer/cus_pic03.png"); }
