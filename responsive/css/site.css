@@ -484,12 +484,15 @@ body[data-page="home"] .mvisual-scroll { color: rgba(244,251,253,.9); }
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
 }
-.shortcut-grid a {
+.shortcut-tile {
   position: relative;
   display: flex;
-  align-items: flex-end;
-  min-height: 132px;
-  padding: 20px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  min-height: 168px;
+  padding: 18px 18px 16px;
   overflow: hidden;
   color: #fff;
   font-weight: 700;
@@ -498,35 +501,75 @@ body[data-page="home"] .mvisual-scroll { color: rgba(244,251,253,.9); }
   line-height: 1.35;
   isolation: isolate;
 }
-.shortcut-grid a::before {
+.shortcut-tile::before {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: -1;
-  background: linear-gradient(160deg, #0a8fa8, #0d2f42);
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(8, 40, 54, 0.18) 0%, rgba(8, 40, 54, 0.12) 42%, rgba(8, 40, 54, 0.78) 100%),
+    linear-gradient(160deg, rgba(10, 143, 168, 0.35), rgba(13, 47, 66, 0.45));
+  pointer-events: none;
+  transition: opacity .35s ease;
+}
+.shortcut-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.shortcut-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.02);
   transition: transform .55s ease;
 }
-.shortcut-grid a:hover { text-decoration: none; color: #fff; }
-.shortcut-grid a:hover::before { transform: scale(1.06); }
-.shortcut-facility::before {
-  background:
-    linear-gradient(180deg, rgba(8,40,54,.25), rgba(8,40,54,.78)),
-    url("/cndh-clone/responsive/image/common/bg_customer_new.jpg") center / cover no-repeat;
+.shortcut-icon {
+  position: relative;
+  z-index: 2;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  flex: 0 0 auto;
+  filter: drop-shadow(0 4px 10px rgba(8, 40, 54, 0.28));
+  transition: transform .35s ease;
 }
-.shortcut-rule::before {
-  background:
-    linear-gradient(180deg, rgba(8,40,54,.28), rgba(8,40,54,.8)),
-    url("/cndh-clone/responsive/image/common/bg_infocenter.jpg") center / cover no-repeat;
+.shortcut-label {
+  position: relative;
+  z-index: 2;
+  display: block;
+  max-width: 100%;
+  font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+  letter-spacing: -0.02em;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
 }
-.shortcut-standard::before {
-  background:
-    linear-gradient(180deg, rgba(8,40,54,.28), rgba(8,40,54,.8)),
-    url("/cndh-clone/responsive/image/common/bg_business.jpg") center / cover no-repeat;
+.shortcut-tile:hover,
+.shortcut-tile:focus-visible {
+  text-decoration: none;
+  color: #fff;
 }
+.shortcut-tile:hover .shortcut-media img,
+.shortcut-tile:focus-visible .shortcut-media img {
+  transform: scale(1.08);
+}
+.shortcut-tile:hover .shortcut-icon,
+.shortcut-tile:focus-visible .shortcut-icon {
+  transform: translateY(-2px) scale(1.04);
+}
+.shortcut-tile:hover::before,
+.shortcut-tile:focus-visible::before {
+  opacity: 0.92;
+}
+.shortcut-facility .shortcut-media img { object-position: center 45%; }
+.shortcut-rule .shortcut-media img { object-position: 18% 42%; }
+.shortcut-standard .shortcut-media img { object-position: 82% 40%; }
+.shortcut-rate .shortcut-media img { object-position: center 28%; }
 .shortcut-rate::before {
   background:
-    linear-gradient(180deg, rgba(8,40,54,.28), rgba(8,40,54,.82)),
-    url("/cndh-clone/responsive/image/common/bg_pr.jpg") center / cover no-repeat;
+    linear-gradient(180deg, rgba(8, 40, 54, 0.22) 0%, rgba(8, 40, 54, 0.18) 40%, rgba(8, 40, 54, 0.8) 100%),
+    linear-gradient(160deg, rgba(10, 143, 168, 0.38), rgba(13, 47, 66, 0.5));
 }
 
 /* Visible by default; hide only after menu.js opts into reveal motion. */
@@ -1190,7 +1233,9 @@ div.tabs_wrap { margin-top: 20px; }
   .home-boards { padding: 48px 0 36px; }
   .home-boards-atmosphere { background-position: 120% 0; opacity: 0.35; }
   .shortcut-grid { grid-template-columns: 1fr 1fr; }
-  .shortcut-grid a { min-height: 110px; }
+  .shortcut-tile { min-height: 148px; padding: 14px 14px 12px; }
+  .shortcut-icon { width: 48px; height: 48px; }
+  .shortcut-label { font-size: 0.95rem; }
   .banner-art { top: auto; bottom: 18px; right: 18px; width: 42%; max-width: 160px; }
   .ceo_headline { font-size: 24px; }
   #contents_01, #contents_02, #contents_03, #contents_04, #contents_05, #contents_06, #contents_07, #contents_09 { padding: 20px 16px; }
@@ -1210,7 +1255,9 @@ div.tabs_wrap { margin-top: 20px; }
   .mvisual-brand { font-size: 2.2rem; }
   .ceo_headline, .board-head h2, .shortcut-title { font-size: 1.2rem; }
   .shortcut-grid { gap: 8px; }
-  .shortcut-grid a { min-height: 96px; padding: 14px 12px; font-size: 14px; }
+  .shortcut-tile { min-height: 132px; padding: 12px; }
+  .shortcut-icon { width: 42px; height: 42px; }
+  .shortcut-label { font-size: 0.88rem; }
   .quick_menu { grid-template-columns: 1fr 1fr; }
   .header_menu { gap: 6px 10px; font-size: 12px; }
   .banner-panel strong { font-size: 1.15rem; }
