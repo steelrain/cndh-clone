@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" role="img" aria-label="한글">
+  <path d="M3 1h7l3 3v11H3z" fill="#fff" stroke="#bbb" stroke-width="0.8"/>
+  <path d="M10 1v3h3" fill="#eee" stroke="#bbb" stroke-width="0.8"/>
+  <rect x="3" y="1" width="10" height="4" fill="#2f6fbf"/>
+  <text x="8" y="4.2" text-anchor="middle" font-size="3.4" fill="#fff" font-family="sans-serif" font-weight="700">한</text>
+  <text x="8" y="11" text-anchor="middle" font-size="5" fill="#2f6fbf" font-family="sans-serif">가</text>
+</svg>
