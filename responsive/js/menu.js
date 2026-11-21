@@ -60,4 +60,25 @@
     window.location.href = "/cndh-clone/responsive/customer/noticeList.html";
     return false;
   };
+
+  var revealNodes = document.querySelectorAll(".reveal");
+  if (revealNodes.length) {
+    // Opt in only after script runs so no-JS keeps content visible.
+    document.documentElement.classList.add("js-reveal");
+    if ("IntersectionObserver" in window) {
+      var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-in");
+          revealObserver.unobserve(entry.target);
+        });
+      }, { threshold: 0.16, rootMargin: "0px 0px -8% 0px" });
+      revealNodes.forEach(function (node, index) {
+        node.style.transitionDelay = (index % 4) * 80 + "ms";
+        revealObserver.observe(node);
+      });
+    } else {
+      revealNodes.forEach(function (node) { node.classList.add("is-in"); });
+    }
+  }
 })();

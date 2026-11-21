@@ -105,26 +105,66 @@
     <div id="container_wrap">
       <main id="container" class="home-main">
         <section class="mvisual" aria-label="메인 비주얼">
+          <div class="mvisual-media" aria-hidden="true">
+            <img class="mvisual-photo" src="/cndh-clone/responsive/image/main/hero_warmth.png" alt="">
+            <img class="mvisual-leaf" src="/cndh-clone/responsive/image/main/hero_leaf_houses.png" alt="">
+          </div>
+          <div class="mvisual-veil" aria-hidden="true"></div>
           <div class="home-inner mvisual-layout">
             <div class="mvisual-copy">
-              <p class="mvisual-kicker">CHEONGNA ENERGY</p>
+              <p class="mvisual-brand">청라에너지</p>
               <h2>깨끗한 에너지, 따뜻한 세상</h2>
+              <p class="mvisual-lead">청라에너지가 만들어 갑니다.</p>
+              <div class="mvisual-cta">
+                <a class="cta-primary" href="/cndh-clone/responsive/company/company_002.html">회사소개</a>
+                <a class="cta-ghost" href="/cndh-clone/responsive/business/business_003.html">지역냉난방효과</a>
+                <a class="cta-ghost" href="/cndh-clone/responsive/bidding/productList.html">입찰정보</a>
+              </div>
             </div>
-            <div class="mvisual-art" role="img" aria-label="집과 햇살이 있는 청라에너지 메인 그림"></div>
           </div>
+          <a class="mvisual-scroll" href="#home-banners" aria-label="다음 구역으로">아래로</a>
         </section>
-        <section class="home-block" aria-label="배너">
-          <div class="home-inner">
-            <ul class="banner-grid">
-              <li><a class="banner-card" href="/cndh-clone/responsive/company/company_002.html"><span class="banner-label">회사 소개</span><strong>'같이'의 '가치'를 아는 청라에너지</strong></a></li>
-              <li><a class="banner-card" href="/cndh-clone/responsive/business/business_003.html"><span class="banner-label">사업소개</span><strong>지역냉난방효과</strong></a></li>
-              <li><a class="banner-card" href="/cndh-clone/responsive/bidding/productList.html"><span class="banner-label">입찰안내</span><strong>입찰정보</strong></a></li>
-            </ul>
-          </div>
+
+        <section id="home-banners" class="home-banners" aria-label="배너">
+          <ul class="banner-stage">
+            <li class="reveal">
+              <a class="banner-panel banner-company" href="/cndh-clone/responsive/company/company_002.html">
+                <img class="banner-art" src="/cndh-clone/responsive/image/main/banner_01.gif" alt="">
+                <span class="banner-copy">
+                  <span class="banner-label">회사 소개</span>
+                  <strong>'같이'의 '가치'를 아는 청라에너지</strong>
+                  <span class="banner-more">자세히보기</span>
+                </span>
+              </a>
+            </li>
+            <li class="reveal">
+              <a class="banner-panel banner-business" href="/cndh-clone/responsive/business/business_003.html">
+                <span class="banner-bg" aria-hidden="true"></span>
+                <img class="banner-art" src="/cndh-clone/responsive/image/main/banner_02.gif" alt="">
+                <span class="banner-copy">
+                  <span class="banner-label">사업소개</span>
+                  <strong>지역냉난방효과</strong>
+                  <span class="banner-more">자세히보기</span>
+                </span>
+              </a>
+            </li>
+            <li class="reveal">
+              <a class="banner-panel banner-bidding" href="/cndh-clone/responsive/bidding/productList.html">
+                <img class="banner-art" src="/cndh-clone/responsive/image/main/banner_03.gif" alt="">
+                <span class="banner-copy">
+                  <span class="banner-label">입찰안내</span>
+                  <strong>입찰정보</strong>
+                  <span class="banner-more">자세히보기</span>
+                </span>
+              </a>
+            </li>
+          </ul>
         </section>
-        <section class="home-block home-boards" aria-label="소식">
+
+        <section class="home-boards" aria-label="소식">
+          <div class="home-boards-atmosphere" aria-hidden="true"></div>
           <div class="home-inner board-grid">
-            <article class="board-card">
+            <article class="board-panel reveal">
               <header class="board-head"><h2>공지사항</h2><a href="/cndh-clone/responsive/customer/noticeList.html">더보기</a></header>
               <ul>
                 <li><a href="/cndh-clone/responsive/customer/noticeView.html">2026년 에너지바우처 안내</a></li>
@@ -134,7 +174,7 @@
                 <li><a href="/cndh-clone/responsive/customer/noticeList.html">2026년 5월 1일부 냉방 감면율 조정 안내</a></li>
               </ul>
             </article>
-            <article class="board-card">
+            <article class="board-panel reveal">
               <header class="board-head"><h2>News</h2><a href="/cndh-clone/responsive/pr/companyInfoList.html">더보기</a></header>
               <ul>
                 <li><a href="/cndh-clone/responsive/pr/companyInfoView.html">[기호일보] 청라에너지,'AI 설비관리시스템' 자체 개발</a></li>
@@ -144,7 +184,7 @@
                 <li><a href="/cndh-clone/responsive/pr/companyInfoList.html">[위키트리] 청라에너지, 서동이장학회에 장학금 5백만원 쾌척</a></li>
               </ul>
             </article>
-            <article class="board-card">
+            <article class="board-panel reveal">
               <header class="board-head"><h2>FAQ</h2><a href="/cndh-clone/responsive/customer/faqList.html">더보기</a></header>
               <ul>
                 <li><a href="/cndh-clone/responsive/customer/faqView.html">세대 난방비 절약방법</a></li>
@@ -156,14 +196,15 @@
             </article>
           </div>
         </section>
-        <section class="home-block" aria-label="메뉴바로가기">
+
+        <section class="home-shortcuts" aria-label="메뉴바로가기">
           <div class="home-inner">
             <h2 class="shortcut-title">메뉴바로가기</h2>
             <ul class="shortcut-grid">
-              <li><a href="/cndh-clone/responsive/customer/customer_002_001.html">고객시설물관리</a></li>
-              <li><a href="/cndh-clone/responsive/infocenter/rule.html">열공급규정</a></li>
-              <li><a href="/cndh-clone/responsive/infocenter/standard.html">열사용시설기준</a></li>
-              <li><a href="/cndh-clone/responsive/customer/customer_004.html">열요금표</a></li>
+              <li class="reveal"><a class="shortcut-facility" href="/cndh-clone/responsive/customer/customer_002_001.html">고객시설물관리</a></li>
+              <li class="reveal"><a class="shortcut-rule" href="/cndh-clone/responsive/infocenter/rule.html">열공급규정</a></li>
+              <li class="reveal"><a class="shortcut-standard" href="/cndh-clone/responsive/infocenter/standard.html">열사용시설기준</a></li>
+              <li class="reveal"><a class="shortcut-rate" href="/cndh-clone/responsive/customer/customer_004.html">열요금표</a></li>
             </ul>
           </div>
         </section>
