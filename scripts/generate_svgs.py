@@ -251,10 +251,53 @@ def build_sitemap_labels() -> None:
         write(RESP / "common" / fname, svg)
 
 
+def _is_near_white_hex(fill: str) -> bool:
+    fill = fill.strip().lstrip("#")
+    if len(fill) == 3:
+        fill = "".join(c * 2 for c in fill)
+    if len(fill) != 6 or any(c not in "0123456789abcdefABCDEF" for c in fill):
+        return False
+    r, g, b = int(fill[0:2], 16), int(fill[2:4], 16), int(fill[4:6], 16)
+    return r >= 0xF0 and g >= 0xF0 and b >= 0xF0
+
+
+def finalize_traced_svg(text: str, *, src_w: int, src_h: int) -> str:
+    """Drop opaque full-canvas near-white bg; restore source intrinsic size."""
+    # Remove full-canvas near-white rectangle paths (e.g. #FEFEFE / #FFFFFF).
+    def drop_bg(match: re.Match[str]) -> str:
+        fill = match.group(1)
+        return "" if _is_near_white_hex(fill) else match.group(0)
+
+    text = re.sub(
+        r'<path d="M0(?:\s|,)0[^"]*" fill="(#[0-9A-Fa-f]{3,8})"[^/]*/>\s*',
+        drop_bg,
+        text,
+        count=3,
+    )
+    # Restore intrinsic size to the pre-supersample source; keep traced coords in viewBox.
+    m = re.search(r'<svg([^>]*)>', text, flags=re.I)
+    if m:
+        attrs = m.group(1)
+        tw = re.search(r'\bwidth="(\d+(?:\.\d+)?)"', attrs)
+        th = re.search(r'\bheight="(\d+(?:\.\d+)?)"', attrs)
+        traced_w = tw.group(1) if tw else str(src_w)
+        traced_h = th.group(1) if th else str(src_h)
+        attrs = re.sub(r'\s*\bwidth="[^"]*"', "", attrs)
+        attrs = re.sub(r'\s*\bheight="[^"]*"', "", attrs)
+        attrs = re.sub(r'\s*\bviewBox="[^"]*"', "", attrs)
+        new_open = (
+            f'<svg{attrs} width="{src_w}" height="{src_h}" '
+            f'viewBox="0 0 {traced_w} {traced_h}">'
+        )
+        text = text[: m.start()] + new_open + text[m.end() :]
+    return text
+
+
 def strip_bg_and_trace(src: Path, dest: Path, *, scale: int = 3, binary: bool = False, threshold: int = 200) -> None:
     im = Image.open(src)
     if im.mode != "RGBA":
         im = im.convert("RGBA")
+    src_w, src_h = im.size
     if scale != 1:
         im = im.resize((im.width * scale, im.height * scale), Image.Resampling.LANCZOS)
     # Make near-white transparent for cleaner SVG, then flatten to white for tracer
@@ -301,25 +344,13 @@ def strip_bg_and_trace(src: Path, dest: Path, *, scale: int = 3, binary: bool = 
             splice_threshold=45,
             path_precision=2,
         )
-    # Drop full-canvas white background path if present
-    text = dest.read_text(encoding="utf-8")
-    text = re.sub(
-        r'<path d="M0[^"]*" fill="#F{2,}F{2,}F{2,}?"[^/]*/>\s*',
-        "",
-        text,
-        count=1,
-        flags=re.I,
-    )
-    # Also common pure white
-    text = re.sub(
-        r'<path d="M0 0[^"]*" fill="#FFFFFF?"[^/]*/>\s*',
-        "",
-        text,
-        count=1,
-        flags=re.I,
-    )
+    text = finalize_traced_svg(dest.read_text(encoding="utf-8"), src_w=src_w, src_h=src_h)
     dest.write_text(text, encoding="utf-8")
-    CONVERTED.append((dest.relative_to(ROOT).as_posix(), "trace"))
+    try:
+        rel = dest.resolve().relative_to(ROOT.resolve()).as_posix()
+    except ValueError:
+        rel = dest.as_posix()
+    CONVERTED.append((rel, "trace"))
 
 
 def build_traced_assets() -> None:

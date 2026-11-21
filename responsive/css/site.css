@@ -992,6 +992,7 @@ div.tabs_wrap { margin-top: 20px; }
   height: 106px;
   content: "";
   background-repeat: no-repeat;
+  background-size: 106px 106px;
 }
 .cus_ico01::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico01.svg"); }
 .cus_ico02::before { background-image: url("/cndh-clone/responsive/image/customer/cus_ico02.svg"); }
