@@ -889,15 +889,27 @@ input[type="text"], select, textarea {
 
 .company_policy_title, .company_policy_line01 {
   margin: 0 0 12px;
+  padding: 0 0 8px 22px;
   color: #004380;
   font-size: 16px;
   font-weight: 700;
+  background-image: url("/cndh-clone/responsive/image/company/bg_icon_01.svg");
+  background-repeat: no-repeat;
+  background-position: left 3px;
+  background-size: 17px 18px;
 }
 .company_line_text_area li, .company_info li, .dot_list > li {
   margin-top: 6px;
   color: #454545;
   font-size: 14px;
   line-height: 1.7;
+}
+.company_line_text_area li {
+  padding-left: 20px;
+  background-image: url("/cndh-clone/responsive/image/company/bg_icon_02.svg");
+  background-repeat: no-repeat;
+  background-position: 8px 0.7em;
+  background-size: 4px 4px;
 }
 .big-title { margin: 0 0 16px; color: #1c9abd; font-size: 25px; font-weight: 600; }
 .gray-box { margin-top: 12px; padding: 16px; border-radius: 10px; background: #f7f7f7; color: #555; }
@@ -918,7 +930,7 @@ input[type="text"], select, textarea {
 }
 .download-file img { width: 16px; height: 16px; margin-left: 8px; }
 
-.company_group, .company_organization, .company_img01, .use_back, .company_map {
+.company_group, .company_organization, .company_img01, .company_map {
   width: auto;
   max-width: 100%;
   height: auto;
@@ -949,17 +961,34 @@ div.tabs_wrap .tabs_on, .group_title01, .faq_tab_title li a.over, .faq_tab_title
 div.tabs_wrap .tabs_on a, .group_title01 a, .faq_tab_title li a.over, .faq_tab_title li a:hover { color: #fff; text-decoration: none; }
 div.tabs_wrap { margin-top: 20px; }
 .history_section_01 {
+  overflow: hidden;
   min-height: 0;
-  padding-top: 8px;
-  background-repeat: no-repeat;
-  background-position: left top;
-  background-size: 180px auto;
+  padding: 8px 0 16px;
   color: #454545;
   font-size: 14px;
   line-height: 1.7;
+  background-image: url("/cndh-clone/responsive/image/company/bg_history_img.jpg");
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 180px auto;
 }
-.history_section_01 ul { float: none; width: auto; margin: 12px 0 0; }
-.history_section_01 strong { color: #0357a6; }
+.history_section_01 ul {
+  float: none;
+  width: auto;
+  max-width: 100%;
+  margin: 12px 0 0;
+  padding-left: 200px;
+  box-sizing: border-box;
+}
+.history_section_01 strong {
+  display: inline-block;
+  min-width: 4.5em;
+  margin-right: 8px;
+  color: #0357a6;
+  text-align: right;
+}
+.history_img_02 { background-position: left 0 bottom -50px; }
+.history_img_03 { background-position: left 0 bottom -4px; }
 .map { margin-bottom: 12px; }
 .root_daum_roughmap { width: 100% !important; max-width: 100% !important; height: 320px !important; }
 .root_daum_roughmap .cont { display: none !important; }
@@ -971,14 +1000,55 @@ div.tabs_wrap { margin-top: 20px; }
 }
 .business_board_01 th, .business_board_02 th { background: #f6f6f6; }
 .business_map_section p { float: none; width: auto; height: auto; max-width: 100%; }
-.use_back, .use_section, .use_section01, .cust02_box, .faq_box {
+.cust02_box, .faq_box {
   width: auto;
   height: auto;
   padding: 8px 0;
   overflow: visible;
   background: none;
 }
-.use_text { float: none; width: auto; }
+.use_back {
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  min-height: 0;
+  margin: 0 0 40px;
+  padding: 12px 8px 20px;
+  overflow: visible;
+  background-image: url("/cndh-clone/responsive/image/business/bg_icon_section.gif");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 100%;
+}
+.use_section01,
+.use_section {
+  width: auto;
+  max-width: 100%;
+  min-height: 123px;
+  height: auto;
+  margin: 0;
+  padding: 28px 16px 20px 130px;
+  overflow: visible;
+  background-image: url("/cndh-clone/responsive/image/business/bg_business_icongroup.png");
+  background-repeat: no-repeat;
+  background-size: 100px auto;
+}
+.use_section01 {
+  padding-top: 33px;
+  background-position: 20px 30px;
+}
+.use_section { background-position: 20px 20px; }
+.use_section_step01 { background-position: 20px -118px; }
+.use_section_step02 { background-position: 20px -266px; }
+.use_section_step03 { background-position: 20px -412px; }
+.use_text { float: none; width: auto; max-width: 100%; }
+.use_title strong {
+  color: #004380;
+  font-size: 17px;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+.use_line { padding-top: 6px; }
 .cust_list li, .cust_list01 li {
   position: relative;
   min-height: 0;
@@ -1244,7 +1314,29 @@ div.tabs_wrap { margin-top: 20px; }
   .table-scroll > table.business_board_02 { min-width: 640px; }
   .cust_list li, .cust_list01 li { padding: 112px 0 16px; }
   .benefits > li, .ideal_talent > li { width: 100%; }
-  .history_section_01 { background-image: none; }
+  .history_section_01 {
+    padding-top: 150px;
+    background-size: 120px auto;
+    background-position: left top;
+  }
+  .history_section_01 ul { padding-left: 0; }
+  .history_img_02 { background-position: left -300px; }
+  .history_img_03 { background-position: left -620px; }
+  .use_back {
+    padding: 8px 4px 12px;
+    background-size: 100% 100%;
+  }
+  .use_section01,
+  .use_section {
+    min-height: 0;
+    padding: 100px 10px 16px;
+    background-size: 72px auto;
+    background-position: center 12px;
+  }
+  .use_section01 { background-position: center 12px; }
+  .use_section_step01 { background-position: center calc(12px - 85px); }
+  .use_section_step02 { background-position: center calc(12px - 191px); }
+  .use_section_step03 { background-position: center calc(12px - 297px); }
   .ceo_name img { float: none; }
   #footer { grid-template-columns: 1fr; width: calc(100% - 24px); }
   .family_site { width: min(100%, 240px); }
